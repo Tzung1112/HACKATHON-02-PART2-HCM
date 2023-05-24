@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .head {
+        display: flex;
+        justify-content: space-around;
+        background-image: radial-gradient(#71e14f, #e1eb53);
+    }
+
+    .tenWeb {
+        font-size: 30px;
+    }
+
+    input {
+        width: 200px;
+        margin-bottom: 10px;
+    }
+
+    .dangKidangNhap {
+        font-size: 10px;
+    }
+
+    .congCu {
+        background-image: radial-gradient(#ade8ff, #4412cf);
+        height: 25px;
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    .render {
+        background-image: radial-gradient(#98a0a7, #027179);
+        height: 300px;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+
+    }
+
+    .anhphim {
+        background-color: aliceblue;
+        width: 150;
+        height: 250px;
+        text-align: center;
+        border: 2px solid red;
+        border-radius: 5px;
+    }
+
+    img {
+        width: 150px;
+        height: 200px;
+    }
+</style>
+
+<body>
+    <div>
+        <div class="head">
+            <div>
+                <span class="tenWeb">PhimHay...JQKA</span>
+                <input type="text" placeholder="Bạn muốn xem Phim gì??">
+            </div>
+            <div class="dangKidangNhap">
+                <span>Đăng Nhập</span>
+                <span>Đăng Ký</span>
+            </div>
+        </div>
+        <div class="congCu">
+            <div onclick="add1()">Phim Hàn</div>
+            <div onclick="add2()">Phim Nhật</div>
+            <div onclick="add3()">Phim Việt</div>
+        </div>
+        <div class="render" id="hienthi">
+
+
+
+        </div>
+    </div>
+    </div>
+    <script>
+        let array1 = ["https://mcdn.coolmate.me/image/April2022/top-8-bo-phim-hai-chieu-rap-viet-nam-cuoi-tha-ga_710.jpg",
+            "https://cafebiz.cafebizcdn.vn/162123310254002176/2022/6/14/photo-4-1655194489387230326007.jpg",
+            "https://icdn.dantri.com.vn/thumb_w/680/2023/02/28/anh-1-1677577679011.jpg",
+            "https://znews-photo.zingcdn.me/w660/Uploaded/mfsy2/2022_03_27/a_business_proposal_1.1.jpeg"];
+
+        function add1() {
+            let result = "";
+            for (let i = 0; i < array1.length; i++) {
+                result += `
+         
+                <div class="anhphim">
+                    <img src="${array1[i]}" alt="">
+                    <div>Phim Hàn</div>
+                    <div>Số tập:${[i + 12]}</div>
+
+                </div>
+        
+        `
+            }
+
+            document.getElementById("hienthi").innerHTML = result
+        }
+        let array2 = ["https://cdnsg.kilala.vn/data/upload/article/4658/Survival%20Family%20phim%20Nhat%20hay.jpg", "https://bazaarvietnam.vn/wp-content/uploads/2022/09/harper-bazaar-nhung-bo-phim-dam-my-nhat-ban-hay-nhat-1.jpeg",
+            "https://ss-images.saostar.vn/2020/05/14/7485999/xyjs10erblv9l6xg__tvreffadwpoq2az7ikns-4pj4.jpg",
+            "https://vietmartjp.com/wp-content/uploads/2021/08/phim-chuyen-tu-tieu-thuyet-nhat-ban-5.jpg"];
+
+        function add2() {
+            let result = "";
+            for (let i = 0; i < array2.length; i++) {
+                result += `
+         
+                <div class="anhphim">
+                    <img src="${array2[i]}" alt="">
+                    <div>Phim Nhật</div>
+                    <div>Số tập:${[i + 8]}</div>
+
+                </div>
+        
+        `
+            }
+
+            document.getElementById("hienthi").innerHTML = result
+        }
+        let array3 = ["https://nld.mediacdn.vn/291774122806476800/2022/7/18/dan-choi-khong-so-con-roi-16581374329191646610218.jpeg",
+            "https://nld.mediacdn.vn/291774122806476800/2022/7/18/vdsn-ngay-khoi-chieu-16581374321901629364216.jpg", "https://toplist.vn/images/800px/nghe-sieu-de-869239.jpg",
+            "https://cdn.nguyenkimmall.com/images/companies/_1/tin-tuc/kinh-nghiem-meo-hay/meo%20vat/phim-VN-chieu-rap-2.jpg"]
+
+        function add3() {
+            let result = "";
+            for (let i = 0; i < array3.length; i++) {
+                result += `
+         
+                <div class="anhphim">
+                    <img src="${array3[i]}" alt="">
+                    <div>Phim Việt Nam</div>
+                    <div>Số tập:${[i + 20]}</div>
+
+                </div>
+        
+        `
+            }
+
+            document.getElementById("hienthi").innerHTML = result
+        }
+    </script>
+</body>
+
+</html>
